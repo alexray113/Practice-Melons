@@ -32,19 +32,42 @@ class MelonType:
         self.code = new_code
 
 
-def make_melon_types(melon):
+def make_melon_types():
     """Returns a list of current melon types."""
 
     all_melon_types = []
-    all_melon_types.append(melon)
+
+    musk = MelonType("Muskmelon", "musk", 1998, "green", True, True)
+    all_melon_types.append(musk)
+    musk.add_pairing("mint")
+
+    cas = MelonType("Casaba", "cas", 2003, "orange", False, False)
+    all_melon_types.append(cas)
+    cas.add_pairing("strawberries")
+    cas.add_pairing("mint")
+
+    cren = MelonType("Crenshaw", "cren", 1996, "green", False, False)
+    all_melon_types.append(cren)
+    cren.add_pairing("prosciutto")
+
+    yw = MelonType("Yellow Watermelon", "yw", 2013, "yellow", False, True)
+    all_melon_types.append(yw)
+    yw.add_pairing("ice cream")
 
     return all_melon_types
+
+melon_list = make_melon_types()
 
 
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
-
-    # Fill in the rest
+    # make_melon_types()
+    
+    for melon in melon_types:
+        print(f"{melon.name} pairs with" )
+        for pairing in melon.pairings:
+            print(f"- {pairing} ") 
+        
 
 
 def make_melon_type_lookup(melon_types):
